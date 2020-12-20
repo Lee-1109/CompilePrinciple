@@ -1,0 +1,1 @@
+begin while ( a > b ) if ( a > b) a := 10 else a := 9 end #
