@@ -1,5 +1,5 @@
 /**
-                 * 编译原理实验二 递归下降分析法
+                 *                          编译原理实验二 递归下降分析法
                  * 18045221-李扬
                  * (1)<程序> ——> begin <语句串> end
                  * (2)<语句串> ——> <语句>{；<语句>} 说明： { }表示可选，即语句串可以只有一条语句，也可以有多个语句；语句之间用分号分隔。
@@ -23,6 +23,7 @@
                  *  H--> E < E | E<=E | E > E | E >= E | E
                  *  产生式说明：
                  *  S 开始符号 A 语句串 B 语句 C 赋值语句 E 表达式  F项  G 因子  H 布尔表达式 ID 为自定义标识符
+                 *  12.24 添加中间代码的生成
 */
 #ifndef COMPILE_RECURSIONANALYSE
 #define COMPILE_RECURSIONANALYSE
@@ -35,7 +36,6 @@ void B();
 void C1();
 void C2();
 void C3();
-void D();
 void E();
 void F();
 void G();
@@ -53,8 +53,6 @@ void doAnalyse(){
     } else
         cout<<"ERROR:不是文法给定的句子"<<endl;
 }
-
-
 //   S-->begin A end
 void S(){
     if (lexical[i].type=33){
